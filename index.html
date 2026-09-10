@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-theme="aurora-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#04070a" />
+    <title>2026 Mobile UI/UX Trends · Moe Kyaw Aung — Trend Studio</title>
+    <meta
+      name="description"
+      content="Senior Android engineer Moe Kyaw Aung's 2026 mobile UI/UX trend studio: agentic UX with transparent reasoning, predictive generative layouts, and role-adaptive dashboards — with 8 switchable premium themes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html, body { background: #04070a; }
+      #root { min-height: 100vh; }
+    </style>
+    <script>
+      // Restore the visitor's saved palette before first paint (prevents theme flash)
+      (function () {
+        try {
+          var t = localStorage.getItem('mka-theme-2026');
+          var ok = ['aurora-dark','noir-dark','champagne-dark','glacier-dark','aurora-light','noir-light','champagne-light','glacier-light'];
+          if (t && ok.indexOf(t) > -1) {
+            document.documentElement.setAttribute('data-theme', t);
+            var light = t.indexOf('light') > -1;
+            document.documentElement.style.colorScheme = light ? 'light' : 'dark';
+            document.documentElement.style.background = light ? '#f4f8f7' : '#04070a';
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
